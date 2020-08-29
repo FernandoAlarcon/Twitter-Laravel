@@ -1,0 +1,24 @@
+// Fonts
+@import url('https://fonts.googleapis.com/css?family=Nunito');
+
+// Variables
+@import 'variables';
+
+// Bootstrap
+@import '~bootstrap/scss/bootstrap';
+
+
+.contenedo-twit{
+  border: 20px solid inherit;
+}
+
+
+.data-unique{
+  font-size: 15px;
+  text-align: right;
+}
+
+.contenedor-twits{
+  height: 600px;
+  overflow: scroll;
+}
