@@ -18,8 +18,27 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/home', function () {
+    return view('home');
+});
+
+Route::get('/mistwits', function () {
+    return view('layouts/datos');
+});
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('twitts', 'TwitterController@List');
 Route::get('TwittsNew', 'TwitterController@CreateTwits');
+
+Route::get('TwitsType', 'TwitterController@ListMine');
+Route::get('DeleteTw', 'TwitterController@DeleteData');
+Route::get('UploadData', 'TwitterController@UploadData');
+
+/// USER ///
+
+Route::get('DataType', 'UserController@InfoPartner');
+
+
+//DataType TwitsType

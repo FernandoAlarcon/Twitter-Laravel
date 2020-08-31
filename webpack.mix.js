@@ -12,7 +12,7 @@ const mix = require('laravel-mix');
  */
 
  mix.scripts([
-         'resources/js/app.js',
+         'resources/js/app.js', 
          'resources/js/axios.js',
          'resources/js/dom-drag.js',
          'resources/js/vue.js',

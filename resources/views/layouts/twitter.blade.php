@@ -23,7 +23,8 @@
            <br>
            <button   type="button" class="btn btn-danger" name="button"  v-on:click.prevent="SubirTwit()" >
               Enviar
-            </button>
+           </button>
+           
         </div>
       </div>
     </div>
@@ -41,7 +42,7 @@
       <div id="publicaciones" class="card-body contenedor-twits"  >
         <div class="contenedo-twit" v-for="Twit in ListTwits" >
              <p>
-               " @{{Twit.Data}} " 
+               " @{{Twit.Data}} "
              </p>
              <p class="data-unique" >
                <font face="arial" >
@@ -54,7 +55,3 @@
     </div>
   </div>
 </div>
-
-<script type="application/javascript" src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
-<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-<script  src="{{ asset('dist/js/app.js') }}" type="application/javascript"></script>

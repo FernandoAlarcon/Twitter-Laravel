@@ -67,8 +67,18 @@
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                                         @csrf
                                     </form>
+                                    <a class="dropdown-item" href="mistwits" >
+                                      Sobre Mi
+                                    </a>
+                                    <a class="dropdown-item" href="home" >
+                                      Twitts
+                                    </a>
+                                </div>
+                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+
                                 </div>
                             </li>
+
                         @endguest
                     </ul>
                 </div>
@@ -81,3 +91,6 @@
     </div>
 </body>
 </html>
+<script type="application/javascript" src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script  src="{{ asset('dist/js/app.js') }}" type="application/javascript"></script>

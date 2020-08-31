@@ -11,6 +11,7 @@ use App\twitters;
 
 class TwitterController extends Controller
 {
+
     public function List(Request $request)
     {
       //$tasks = twitters::orderBy('Fecha', 'DESC')->paginate();
@@ -56,5 +57,54 @@ class TwitterController extends Controller
       }
 
 
+    }
+
+    public function ListMine()
+    {
+       $id    = Auth::id();
+       $twits = DB::select("SELECT * FROM twitters WHERE id_user = ? ORDER BY fecha DESC ",[$id]);
+
+
+      return [  	'Info' => 'Kit Fisto',
+                  'List' => $twits ];
+    }
+
+    public function DeleteData(Request $request)
+    {
+      $id      = Auth::id();
+      $id_t    = trim($request->input('Id_twit'));
+      $results = DB::delete('DELETE FROM twitters WHERE id_twitt = ? AND id_user = ? ', [$id_t,$id]);    //twitters::findOrFail($id_t);
+      //$results = DB::table('twitters')->where('id_twitt',$id_t)->delete();
+      //$results->delete();
+
+      if (!$results) {
+         $successfull = 'error';
+      }else{
+         $successfull = 'successfull';
+      }
+
+      return [
+                'Event' => $successfull
+      ];
+
+    }
+
+    public function UploadData(Request $request)
+    {
+      $id      = Auth::id();
+      $id_t    = trim($request->input('Id_twit'));
+      $data    = trim($request->input('Informacion'));
+
+      $query = DB::update('UPDATE twitters SET Data = ? WHERE id_twitt = ? AND id_user = ? ', [$data,$id_t,$id]);
+
+      if (!$query) {
+         $successfull = 'error';
+      }else{
+         $successfull = 'successfull';
+      }
+
+      return [
+                'Event' => $successfull
+      ];
     }
 }
