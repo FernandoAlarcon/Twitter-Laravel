@@ -11,7 +11,7 @@
 
 ## About Laravel
 
-Primero Carga la Base de Datos, no hace falta migrar nada, solo copiar y pegar y hacer funcionar el servidor apache ....
+Primero Carga la Base de Datos ./database/prueba_twitter.sql , no hace falta migrar nada, solo copiar y pegar y hacer funcionar el servidor apache ....
 Verificar que esta la carpeta Composer, (php artisan composer update),  ejecutar " php artisan serve "
 instalar las dependecias de package.json instalar las dependecias de node_modules
 
